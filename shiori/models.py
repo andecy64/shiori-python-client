@@ -43,3 +43,9 @@ class ShioriConfig(BaseModel):
     username: str
     password: str
     base_url: str
+
+
+class Account(BaseModel):
+    id: int
+    username: str
+    owner: bool

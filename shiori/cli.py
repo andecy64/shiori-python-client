@@ -19,7 +19,7 @@ def get_default_shiori_config_dir():
 @click.option("--debug/--no-debug", default=False)
 @click.option("--config-dir", "-c", default=get_default_shiori_config_dir())
 @click.pass_context
-def cli(ctx, base_url, debug, config_dir, username, password):
+def cli(ctx, debug, config_dir,):
     with open(config_dir / "config.json", "r") as config_file:
         config = ShioriConfig(**json.loads(config_file.read()))
 
@@ -40,7 +40,7 @@ def get_bookmarks(ctx):
 
 
 def main():
-    cli(auth_envvar_prefix="SHIORI")
+    cli(auto_envvar_prefix="SHIORI")
 
 
 if __name__ == "__main__":

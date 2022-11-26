@@ -13,7 +13,7 @@ with open('HISTORY.rst') as history_file:
 requirements = [
         'Click>=7.0', 
         'pydantic==1.10.2',
-        'uplink==0.9.7',
+        'uplink[pydantic]==0.9.7',
         ]
 
 test_requirements = [ ]

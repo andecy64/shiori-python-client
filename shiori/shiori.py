@@ -3,7 +3,7 @@ from uplink import (
         json,
         post,
         get,
-        Field
+        Field,
         )
 
 from .models import (
@@ -25,11 +25,6 @@ class ShioriClient(Consumer):
     def __login(self, username: Field, password: Field) -> ShioriLogin:
         """ Get session id """
 
-    @json
-    @get("/api/version")
-    def get_version(self):
-        """ Get version """
-
     @post("/api/logout")
     def logout(self):
         """ Logout """
@@ -37,7 +32,3 @@ class ShioriClient(Consumer):
     @get("/api/bookmarks")
     def get_bookmarks(self) -> ShioriBookmarks:
         """ Get bookmarks from server """
-
-    @get("/api/accounts")
-    def get_accounts(self):
-        """ Get a list of user accounts """
